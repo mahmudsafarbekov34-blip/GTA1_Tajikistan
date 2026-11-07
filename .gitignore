@@ -1,0 +1,47 @@
+# Unreal Engine generated and local files
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+*.sln
+*.xcodeproj/
+*.xcworkspace/
+*.xcuserstate
+*.opensdf
+*.sdf
+*.suo
+*.VC.db
+*.VC.VC.opendb
+
+# Local editor and machine settings
+.vs/
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.log
+__pycache__/
+*.py[cod]
+
+# Secrets, signing material, and local environment
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+*.p12
+*.mobileprovision
+*.provisionprofile
+
+# Platform build output
+Build/
+Packaged/
+*.apk
+*.aab
+*.ipa
+*.app/
+*.dSYM/
+
+# OS metadata
+.DS_Store
+Thumbs.db
