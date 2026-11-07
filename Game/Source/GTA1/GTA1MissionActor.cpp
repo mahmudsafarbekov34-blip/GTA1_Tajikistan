@@ -28,6 +28,7 @@ AGTA1MissionActor::AGTA1MissionActor()
     Trigger->SetupAttachment(SceneRoot);
     Trigger->SetBoxExtent(FVector(180.0f, 180.0f, 150.0f));
     Trigger->SetCollisionProfileName(TEXT("Trigger"));
+    Trigger->SetGenerateOverlapEvents(true);
 
     Marker = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MissionMarker"));
     Marker->SetupAttachment(SceneRoot);

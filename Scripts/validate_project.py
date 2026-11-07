@@ -152,11 +152,17 @@ def main() -> None:
     if before_function.count("{") != before_function.count("}"):
         fail("ApplyBlockoutMaterials is not defined at file scope")
 
+    mission_cpp = (SOURCE / "GTA1" / "GTA1MissionActor.cpp").read_text(
+        encoding="utf-8"
+    )
+    if "Trigger->SetGenerateOverlapEvents(true);" not in mission_cpp:
+        fail("mission trigger must explicitly generate overlap events")
+
     print("PASS: UE 5.4.4 project metadata and module")
     print("PASS: required targets, build rules, and PhysicsCore dependency")
     print(f"PASS: generated-header order and local includes ({len(headers)} headers)")
     print(f"PASS: delimiter and whitespace scan ({len(cpp_files)} C++ files)")
-    print("PASS: ApplyBlockoutMaterials file-scope definition")
+    print("PASS: ApplyBlockoutMaterials scope and mission overlap configuration")
 
     maps = list((ROOT / "Game").rglob("*.umap"))
     assets = list((ROOT / "Game").rglob("*.uasset"))
